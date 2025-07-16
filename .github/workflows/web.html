@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinetico Ambassador Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #e0f3ff 0%, #ffffff 100%);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #003a70;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: #333;
+      max-width: 600px;
+      text-align: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-top: 2rem;
+      max-width: 600px;
+      width: 100%;
+    }
+    .input-group {
+      margin-bottom: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #003a70;
+    }
+    button {
+      width: 100%;
+      background-color: #0070c0;
+      color: #fff;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .success {
+      color: green;
+      font-weight: 600;
+      text-align: center;
+    }
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .footer a {
+      color: #0070c0;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Kinetico Ambassador Portal</h1>
+  <p>Submit a lead and earn rewards when your referral becomes a Kinetico customer. Just fill in the form below!</p>
+
+  <div class="card">
+    <form id="leadForm">
+      <h2>Ambassador Info</h2>
+      <div class="input-group">
+        <label for="ambassadorName">Your Name</label>
+        <input type="text" id="ambassadorName" required />
+      </div>
+      <div class="input-group">
+        <label for="ambassadorEmail">Your Email</label>
+        <input type="email" id="ambassadorEmail" required />
+      </div>
+
+      <h2>Referral Info</h2>
+      <div class="input-group">
+        <label for="referralName">Referral's Name</label>
+        <input type="text" id="referralName" required />
+      </div>
+      <div class="input-group">
+        <label for="referralContact">Referral's Email or Phone</label>
+        <input type="text" id="referralContact" required />
+      </div>
+      <div class="input-group">
+        <label for="referralZip">Referral's Zip Code</label>
+        <input type="text" id="referralZip" required />
+      </div>
+      <div class="input-group">
+        <label for="notes">Notes (Optional)</label>
+        <textarea id="notes" rows="3"></textarea>
+      </div>
+
+      <button type="submit">Submit Lead</button>
+      <div id="confirmation" class="success" style="display:none;">🎉 Lead submitted successfully! Thank you.</div>
+    </form>
+  </div>
+
+  <div class="footer">
+    <p><strong>$50</strong> for a verified consultation<br><strong>$200</strong> when your referral becomes a customer.</p>
+    <p>Questions? <a href="mailto:ambassadors@kinetico.com">ambassadors@kinetico.com</a></p>
+  </div>
+
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simulate successful submission
+      document.getElementById('confirmation').style.display = 'block';
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
